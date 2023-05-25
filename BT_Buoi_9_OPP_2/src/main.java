@@ -50,17 +50,17 @@ public class main {
 //		System.out.println(sv3.toString());
 		
 		//Bài 4: Ngân hàng...
-		Account account1 = new Account(123456789,"Nguyen Van A");
-		Account account2 = new Account(123456788,"Nguyen Van B");
-		
-		System.out.println("Số dư trước khi chuyển của Account1: "+ account1.toStringBalance());
-		System.out.println("Số dư trước khi chuyển của Account2: "+ account2.toStringBalance());
-		
+//		Account account1 = new Account(123456789,"Nguyen Van A");
+//		Account account2 = new Account(123456788,"Nguyen Van B");
+//		
+//		System.out.println("Số dư trước khi chuyển của Account1: "+ account1.toStringBalance());
+//		System.out.println("Số dư trước khi chuyển của Account2: "+ account2.toStringBalance());
+//		
 //		account1.transfer(account2, 80);
-		account1.transfer(account2, 20000);
-		
-		System.out.println("Số dư sau khi chuyển của Account1: "+ account1.toStringBalance());
-		System.out.println("Số dư sau khi chuyển của Account2: "+ account2.toStringBalance());
+//		account1.transfer(account2, 20000);
+//		
+//		System.out.println("Số dư sau khi chuyển của Account1: "+ account1.toStringBalance());
+//		System.out.println("Số dư sau khi chuyển của Account2: "+ account2.toStringBalance());
 		
 	}
 	public static int inputIntegerNumber(int lowerLimit,int upperLimit, String Text) {

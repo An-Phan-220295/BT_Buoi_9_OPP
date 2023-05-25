@@ -88,14 +88,21 @@ public class Account {
 	}
 	
 	public void depositMoney(double topUpAmount) {
-		this.accountBalance = this.accountBalance + topUpAmount;
+		if(topUpAmount>0)
+			this.accountBalance = this.accountBalance + topUpAmount;
+		else
+			System.out.println("Vui lòng nhập lại số tiền cần nạp.");
 	}
 	
 	public void withdrawMoney(double withdrawalAmount) {
-		if(withdrawalAmount > this.accountBalance)
-			System.out.println("Số dư không đủ để thực hiện giao dịch này.");
+		if(withdrawalAmount>0) {
+			if(withdrawalAmount > this.accountBalance)
+				System.out.println("Số dư không đủ để thực hiện giao dịch này.");
+			else
+				this.accountBalance = this.accountBalance - (withdrawalAmount + withdrawalFee);
+		}
 		else
-			this.accountBalance = this.accountBalance - (withdrawalAmount + withdrawalFee);
+			System.out.println("Vui lòng nhập lại số tiền cần rút.");
 	}
 	
 	public void depositMaturity() {
@@ -103,12 +110,15 @@ public class Account {
 	}
 	
 	public void transfer(Account destinationAccount,double transferAmount) {
-		if(transferAmount >= this.accountBalance)
-			System.out.println("Số dư không đủ để thực hiện giao dịch này.");
-		else {
-			this.accountBalance = this.accountBalance - transferAmount;
-			destinationAccount.depositMoney(transferAmount);
+		if(transferAmount>0) {
+			if(transferAmount >= this.accountBalance)
+				System.out.println("Số dư không đủ để thực hiện giao dịch này.");
+			else {
+				this.accountBalance = this.accountBalance - transferAmount;
+				destinationAccount.depositMoney(transferAmount);
+			}
 		}
+		else
+			System.out.println("Vui lòng nhập lại số tiền cần chuyển.");
 	}
-	
 }

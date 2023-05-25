@@ -30,8 +30,14 @@ public class StudentInfo2 {
 	public StudentInfo2(int id, String name, float lTScore, float tHScore) {
 		this.id = id;
 		this.name = name;
-		LTScore = lTScore;
-		THScore = tHScore;
+		if(lTScore >= 0 && lTScore<=10)
+			LTScore = lTScore;
+		else
+			System.out.println("Vui lòng nhập điểm số từ 0 đến 10");
+		if(tHScore >= 0 && tHScore<=10)
+			THScore = tHScore;
+		else
+			System.out.println("Vui lòng nhập điểm số từ 0 đến 10");
 	}
 	
 	public StudentInfo2() {
@@ -58,7 +64,10 @@ public class StudentInfo2 {
 	}
 
 	public void setLTScore(float lTScore) {
-		LTScore = lTScore;
+		if(lTScore >= 0 && lTScore<=10)
+			LTScore = lTScore;
+		else
+			System.out.println("Vui lòng nhập điểm số từ 0 đến 10");
 	}
 
 	public float getTHScore() {
@@ -66,7 +75,10 @@ public class StudentInfo2 {
 	}
 
 	public void setTHScore(float tHScore) {
-		THScore = tHScore;
+		if(tHScore >= 0 && tHScore<=10)
+			THScore = tHScore;
+		else
+			System.out.println("Vui lòng nhập điểm số từ 0 đến 10");
 	}
 	
 	public float averageScore() {
@@ -77,7 +89,4 @@ public class StudentInfo2 {
 	public String toString() {
 		return "StudentInfo2 [id=" + id + ", name=" + name + ", LTScore=" + LTScore + ", THScore=" + THScore + "]";
 	}
-	
-	
-
 }
